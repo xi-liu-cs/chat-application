@@ -1,0 +1,34 @@
+.container {
+  border: 2px solid;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.my_div
+{
+  border: 2px outset pink;
+  width: 50%;
+  background-color: blueviolet;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header,
+footer,
+main {
+  padding: 20px;
+}
+
+header,
+main {
+  border-bottom: 2px solid;
+  margin-bottom: 5px;
+}
+
+p.post {
+  font-size: 15px;
+}
+
+footer {
+  margin-bottom: 5px;
+}

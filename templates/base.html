@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>chat app</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <div class = "my_div">
+      <header>
+        <h1>chat app</h1>
+        <p>
+          <a href="{{ url_for('home')}}">home</a> |
+          <a href="{{ url_for('read')}}">all posts</a> |
+          <a href="{{ url_for('create')}}">create a post</a>
+        </p>
+      </header>
+      <main>{% block container %} {% endblock %}</main>
+      <script> /* only print uploaded file when file input is not empty */
+        function print_file()
+        {
+            var file = doc.getElementById("file_id");
+            if(file.files.length != 0)
+                return true;
+            else
+                return false;
+        }
+    </script>
+    </div>
+  </body>
+</html>

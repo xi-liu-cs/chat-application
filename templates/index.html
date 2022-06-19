@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<h2>welcome!</h2>
+<p>welcome to chat app. this is the home page. here are a few links to related pages
+    <ul>
+        <li><a href="{{ url_for('read')}}">a page that displays messages stored in a mongodb database collection</a></li>
+        <li><a href="{{ url_for('create')}}">a page with a form you can submit to send a new message in a MongoDB collection</a></li>
+    </ul>
+</p>
+{% endblock %}

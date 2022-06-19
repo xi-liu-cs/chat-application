@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block container %}
+<h2>update</h2>
+<p>edit a message in the mongodb database collection</p>
+<form method="post" action="{{ url_for('edit_post', mongoid = mongoid) }}">
+    <p>
+      sender: <input type="text" id="send_id" name="sender_name" value = "{{doc.sender_name}}"/><br />
+    </p>
+    <p>
+      receiver: <input type="text" id="receive_id" name="receiver_name" value = "{{doc.receiver_name}}"/><br />
+    </p>
+    <p>
+      message:  <textarea type="text" id="message_id" name="message_name">{{doc.message_name}}</textarea>
+    </p>
+    <p>
+      sender's previous file transfer is: {{doc.file_name}}<br>
+      sender's new file transfer is:<br>
+      file: <input type = "file" id = "file_id", name = "file_name"/>
+    </p>
+      sender's previous favorite language is: {{doc.fav_lang}}<br>
+      sender's new favorite language is:<br>
+      <input type = "radio", id = "c_id", name = "fav_lang" value = "c">
+      <label for = "c_id">c</label><br>
+      <input type = "radio", id = "c++_id", name = "fav_lang" value = "c++">
+      <label for = "c++_id">c++</label><br>
+      <input type = "radio", id = "assembly_id", name = "fav_lang" value = "assembly">
+      <label for = "assembly_id">assembly</label><br>
+      <input type = "radio", id = "java_id", name = "fav_lang" value = "java">
+      <label for = "java_id">java</label><br>
+      <input type = "radio", id = "python_id", name = "fav_lang" value = "python">
+      <label for = "python_id">python</label><br>
+      <input type = "radio", id = "javascript_id", name = "fav_lang" value = "javascript">
+      <label for = "javascript_id">javascript</label><br>
+      <input type = "radio", id = "html/css_id", name = "fav_lang" value = "html/css">
+      <label for = "html/css_id">html/css</label><br>
+      <input type = "radio", id = "sql_id", name = "fav_lang" value = "sql">
+      <label for = "sql_id">sql</label><br>
+    <p>
+      <a href="{{ url_for('read')}}">cancel</a>
+      <input type="submit" name="post-btn" value="save" />
+    </p>
+  </form>
+{% endblock %}

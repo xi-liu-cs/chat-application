@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block container %}
+<h2>read</h2>
+<p>this page shows information pulled from a mongodb database collection
+        
+    {% for doc in docs %}
+    <div>
+        <hr class="solid">
+        <p class="post"> 
+        <p>
+            time is {{ doc.created_at.strftime("%H:%M on %d %B %Y") }} 
+            </br>
+            sender is {{doc.sender_name}} </br>
+            receiver is {{doc.receiver_name}} </br>
+            message is: {{ doc.message_name }} </br>
+            file transferred is: {{ doc.file_name }} </br>
+            sender's favorite language is: {{ doc.fav_lang }} </br>
+            <a href="{{ url_for('edit',mongoid=doc._id)}}">edit</a> | <a href="{{ url_for('delete',mongoid=doc._id)}}">delete</a>
+        </p>
+    </div>
+    {%endfor%}
+</p>
+{% endblock %}
